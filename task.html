@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title></title>
+
+    <style type="text/css">
+      .new-rect {
+        background: yellow;
+      width: 96%;
+      height: 31px;
+      border: 1px solid black;
+      padding-top: 18px;
+     margin-top: 27px;
+     padding-left: 10px;
+    
+}
+      #text {
+        background: beige;
+        width: 22%;
+        height: 31px;
+      border: 1px solid black;
+     margin-top: 37px;
+     padding-top: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="text">div1</div>
+    <script type="text/javascript">
+      var i = 1;
+        document.getElementById("text").onclick = function () {
+        var div = document.createElement("div");
+        var button = document.createElement("BUTTON");
+        button.innerHTML = "close";
+        div.className = "new-rect";
+        div.innerHTML = i++;
+        var text = document.getElementById('text');
+        text.appendChild(div);
+        div.appendChild(button);
+        button.onclick = (e) => {
+          document.getElementById('text').firstElementChild.remove(div);
+        };
+      };
+    </script>
+  </body>
+</html>
